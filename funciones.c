@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "funciones.h"
 
 void mostrarMenuCategoria(char categoria[][50], float precios[], int n) {
@@ -59,19 +60,4 @@ void eliminarComponente(char categoria[][50], float precios[], int* n) {
     printf("Componente eliminado con exito.\n");
 }
 
-void comprar(char categoria[][50], float precios[], int n, float* total) {
-    int opcion;
-    printf("Ingrese el numero del componente que desea comprar (0 para cancelar): ");
-    scanf("%d", &opcion);
-
-    if (opcion < 1 || opcion > n) {
-        printf("Opcion invalida.\n");
-        return;
-    }
-
-    float precioSeleccionado = precios[opcion-1];
-    printf("Has seleccionado: %s - $%.2f\n", categoria[opcion-1], precioSeleccionado);
-    *total += precioSeleccionado;
-    printf("Compra realizada con exito.\n");
-}
 
