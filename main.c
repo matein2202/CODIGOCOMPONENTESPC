@@ -2,8 +2,8 @@
 #include "funciones.h"
 
 int main() {
-    char categorias[componentes_maximos][nom];
-    float precios[componentes_maximos];
+    char categoria[10][50];
+    float precios[10];
     int numComponentes = 0;
     float total = 0.0;
 
@@ -14,6 +14,7 @@ int main() {
         printf("2. Mostrar categorias\n");
         printf("3. Comprar\n");
         printf("4. Eliminar\n");
+        printf("0. Salir y generar factura\n");
         printf("***************************\n");
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
@@ -25,9 +26,9 @@ int main() {
                 printf("Gracias por su compra.\n");
                 break;
             case 1:
-                if (numComponentes < componentes_maximos) {
+                if (numComponentes < 10) {
                     printf("Ingrese el nombre del componente: ");
-                    scanf("%s", categorias[numComponentes]);
+                    scanf("%s", categoria[numComponentes]);
                     printf("Ingrese el precio del componente: ");
                     scanf("%f", &precios[numComponentes]);
                     numComponentes++;
@@ -37,22 +38,24 @@ int main() {
                 }
                 break;
             case 2:
-                mostrarMenuCategoria(categorias, precios, numComponentes);
+                mostrarMenuCategoria(categoria, precios, numComponentes);
                 break;
             case 3:
-                mostrarMenuCategoria(categorias, precios, numComponentes);
-                comprar(categorias, precios, numComponentes, &total);
+                mostrarMenuCategoria(categoria, precios, numComponentes);
+                comprar(categoria, precios, numComponentes, &total);
                 break;
             case 4:
-                mostrarMenuCategoria(categorias, precios, numComponentes);
-                eliminar(categorias, precios, numComponentes, &total);
+                mostrarMenuCategoria(categoria, precios, numComponentes);
+                eliminar(categoria, precios, numComponentes, &total);
                 break;
             default:
                 printf("Opcion invalida.\n");
                 break;
         }
+        printf("\n");
     } while (opcion != 0);
 
     return 0;
 }
+
 
