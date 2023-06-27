@@ -11,7 +11,7 @@ int main() {
     do {
         printf("*** MENU DE COMPRA ***\n");
         printf("1. Agregar componente\n");
-        printf("2. Mostrar categorias\n");
+        printf("2. Mostrar productos\n");
         printf("3. Comprar\n");
         printf("4. Eliminar\n");
         printf("***************************\n");
@@ -56,5 +56,6 @@ int main() {
 
     return 0;
 }
+
 
 
