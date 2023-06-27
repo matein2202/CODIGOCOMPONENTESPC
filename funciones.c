@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "funciones.h"
 
-void mostrarMenuCategoria(Componente* categoria, int n) {
+void MenuCategoria(Componente* categoria, int n) {
     printf("***************************\n");
     for (int i = 0; i < n; i++) {
         printf("%d. %s - $%.2f\n", i+1, categoria[i].nombre, categoria[i].precio);

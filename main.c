@@ -52,19 +52,19 @@ int main() {
                 printf("Gracias por su compra.\n");
                 break;
             case 1:
-                mostrarMenuCategoria(procesadores, numProcesadores);
+                MenuCategoria(procesadores, numProcesadores);
                 comprar(procesadores, numProcesadores, &total);
                 break;
             case 2:
-                mostrarMenuCategoria(ram, numRam);
+                MenuCategoria(ram, numRam);
                 comprar(ram, numRam, &total);
                 break;
             case 3:
-                mostrarMenuCategoria(grafica, numGrafica);
+                MenuCategoria(grafica, numGrafica);
                 comprar(grafica, numGrafica, &total);
                 break;
             case 4:
-                mostrarMenuCategoria(tarjetaMadre, numTarjetaMadre);
+                MenuCategoria(tarjetaMadre, numTarjetaMadre);
                 comprar(tarjetaMadre, numTarjetaMadre, &total);
                 break;
             case 9:
@@ -84,19 +84,19 @@ int main() {
                         printf("Eliminacion cancelada.\n");
                         break;
                     case 1:
-                        mostrarMenuCategoria(procesadores, numProcesadores);
+                        MenuCategoria(procesadores, numProcesadores);
                         eliminar(procesadores, numProcesadores, &total);
                         break;
                     case 2:
-                        mostrarMenuCategoria(ram, numRam);
+                        MenuCategoria(ram, numRam);
                         eliminar(ram, numRam, &total);
                         break;
                     case 3:
-                        mostrarMenuCategoria(grafica, numGrafica);
+                        MenuCategoria(grafica, numGrafica);
                         eliminar(grafica, numGrafica, &total);
                         break;
                     case 4:
-                        mostrarMenuCategoria(tarjetaMadre, numTarjetaMadre);
+                        MenuCategoria(tarjetaMadre, numTarjetaMadre);
                         eliminar(tarjetaMadre, numTarjetaMadre, &total);
                         break;
                     default:

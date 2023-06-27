@@ -4,7 +4,7 @@ typedef struct {
     float precio;
 } Componente;
 
-void mostrarMenuCategoria(Componente* categoria, int n);
+void MenuCategoria(Componente* categoria, int n);
 
 void comprar(Componente* categoria, int n, float* total);
 
