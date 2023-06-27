@@ -5,15 +5,16 @@ int main() {
     char categoria[10][50];
     float precios[10];
     int numComponentes = 0;
-    float total = 0;
+    float total = 0.0;
 
     int opcion;
     do {
         printf("*** MENU DE COMPRA ***\n");
         printf("1. Agregar componente\n");
-        printf("2. Mostrar productos\n");
-        printf("3. Comprar\n");
-        printf("4. Eliminar\n");
+        printf("2. Mostrar inventario\n");
+        printf("4. Modificar precio\n");
+        printf("5. Eliminar componente\n");
+        printf("0. Salir y generar factura\n");
         printf("***************************\n");
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
@@ -25,16 +26,7 @@ int main() {
                 printf("Gracias por su compra.\n");
                 break;
             case 1:
-                if (numComponentes < 10) {
-                    printf("Ingrese el nombre del componente: ");
-                    scanf("%s", categoria[numComponentes]);
-                    printf("Ingrese el precio del componente: ");
-                    scanf("%f", &precios[numComponentes]);
-                    numComponentes++;
-                    printf("Componente agregado con exito.\n");
-                } else {
-                    printf("No se pueden agregar mas componentes. Maximo alcanzado.\n");
-                }
+                agregarComponente(categoria, precios, &numComponentes);
                 break;
             case 2:
                 mostrarMenuCategoria(categoria, precios, numComponentes);
@@ -45,7 +37,11 @@ int main() {
                 break;
             case 4:
                 mostrarMenuCategoria(categoria, precios, numComponentes);
-                eliminar(categoria, precios, numComponentes, &total);
+                modificarPrecio(categoria, precios, numComponentes);
+                break;
+            case 5:
+                mostrarMenuCategoria(categoria, precios, numComponentes);
+                eliminarComponente(categoria, precios, &numComponentes);
                 break;
             default:
                 printf("Opcion invalida.\n");
@@ -56,6 +52,5 @@ int main() {
 
     return 0;
 }
-
 
 
