@@ -3,8 +3,8 @@
 
 void mostrarMenuCategoria(char categoria[][50], float precios[], int n) {
     printf("***************************\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d. %s - $%.2f\n", i+1, categoria[i], precios[i]);
+    for (int a = 0; a < n; a++) {
+        printf("%d. %s - $%.2f\n", a+1, categoria[a], precios[a]);
     }
     printf("***************************\n");
 }
@@ -40,5 +40,6 @@ void eliminar(char categoria[][50], float precios[], int n, float* total) {
     *total -= precioEliminado;
     printf("Eliminacion realizada con exito.\n");
 }
+
 
 
