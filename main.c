@@ -5,7 +5,7 @@ int main() {
     char categoria[10][50];
     float precios[10];
     int numComponentes = 0;
-    float total = 0.0;
+    float total = 0;
 
     int opcion;
     do {
@@ -14,7 +14,6 @@ int main() {
         printf("2. Mostrar categorias\n");
         printf("3. Comprar\n");
         printf("4. Eliminar\n");
-        printf("0. Salir y generar factura\n");
         printf("***************************\n");
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
