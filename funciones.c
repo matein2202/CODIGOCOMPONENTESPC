@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include "funciones.h"
 
-void MenuCategoria(Componente* categoria, int n) {
+void mostrarMenuCategoria(char categoria[componentes_maximos][nom], float precios[componentes_maximos], int n) {
     printf("***************************\n");
     for (int i = 0; i < n; i++) {
-        printf("%d. %s - $%.2f\n", i+1, categoria[i].nombre, categoria[i].precio);
+        printf("%d. %s - $%.2f\n", i+1, categoria[i], precios[i]);
     }
     printf("***************************\n");
 }
 
-void comprar(Componente* categoria, int n, float* total) {
+void comprar(char categoria[componentes_maximos][nom], float precios[componentes_maximos], int n, float* total) {
     int opcion;
     printf("Ingrese el numero del componente que desea comprar (0 para cancelar): ");
     scanf("%d", &opcion);
@@ -24,13 +24,12 @@ void comprar(Componente* categoria, int n, float* total) {
         return;
     }
 
-    Componente* seleccionado = &categoria[opcion-1];
-    printf("Has seleccionado: %s - $%.2f\n", seleccionado->nombre, seleccionado->precio);
-    *total += seleccionado->precio;
+    printf("Has seleccionado: %s - $%.2f\n", categoria[opcion-1], precios[opcion-1]);
+    *total += precios[opcion-1];
     printf("Compra realizada con exito.\n");
 }
 
-void eliminar(Componente* categoria, int n, float* total) {
+void eliminar(char categoria[componentes_maximos][nom], float precios[componentes_maximos], int n, float* total) {
     int opcion;
     printf("Ingrese el numero del componente que desea eliminar (0 para cancelar): ");
     scanf("%d", &opcion);
@@ -45,8 +44,8 @@ void eliminar(Componente* categoria, int n, float* total) {
         return;
     }
 
-    Componente eliminado = categoria[opcion-1];
-    printf("Has eliminado: %s - $%.2f\n", eliminado.nombre, eliminado.precio);
-    *total -= eliminado.precio;
+    printf("Has eliminado: %s - $%.2f\n", categoria[opcion-1], precios[opcion-1]);
+    *total -= precios[opcion-1];
     printf("Eliminacion realizada con exito.\n");
 }
+
