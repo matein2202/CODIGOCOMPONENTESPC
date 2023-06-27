@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include "funciones.h"
 
+#define componentes_maximos 10
+
 int main() {
-    char categoria[10][50];
-    float precios[10];
+    char categoria[componentes_maximos][50];
+    float precios[componentes_maximos];
     int numComponentes = 0;
-    float total = 0.0;
 
     int opcion;
     do {
         printf("*** MENU DE COMPRA ***\n");
         printf("1. Agregar componente\n");
         printf("2. Mostrar inventario\n");
-        printf("4. Modificar precio\n");
-        printf("5. Eliminar componente\n");
+        printf("3. Modificar precio\n");
+        printf("4. Eliminar componente\n");
         printf("0. Salir y generar factura\n");
         printf("***************************\n");
         printf("Ingrese una opcion: ");
@@ -22,31 +23,25 @@ int main() {
         switch (opcion) {
             case 0:
                 printf("Factura:\n");
-                printf("Total a pagar: $%.2f\n", total);
                 printf("Gracias por su compra.\n");
                 break;
             case 1:
-                agregarComponente(categoria, precios, &numComponentes);
+                numComponentes = agregarComponente(categoria, precios, numComponentes);
                 break;
             case 2:
                 mostrarMenuCategoria(categoria, precios, numComponentes);
                 break;
             case 3:
-                mostrarMenuCategoria(categoria, precios, numComponentes);
-                comprar(categoria, precios, numComponentes, &total);
-                break;
-            case 4:
-                mostrarMenuCategoria(categoria, precios, numComponentes);
                 modificarPrecio(categoria, precios, numComponentes);
                 break;
-            case 5:
-                mostrarMenuCategoria(categoria, precios, numComponentes);
+            case 4:
                 eliminarComponente(categoria, precios, &numComponentes);
                 break;
             default:
                 printf("Opcion invalida.\n");
                 break;
         }
+
         printf("\n");
     } while (opcion != 0);
 
