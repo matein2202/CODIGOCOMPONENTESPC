@@ -1,13 +1,9 @@
 
-typedef struct {
-    char nombre[50];
-    float precio;
-} Componente;
+#define componentes_maximos 10
+#define nom 50
 
-void MenuCategoria(Componente* categoria, int n);
-
-void comprar(Componente* categoria, int n, float* total);
-
-void eliminar(Componente* categoria, int n, float* total);
+void mostrarMenuCategoria(char categoria[componentes_maximos][nom], float precios[componentes_maximos], int n);
+void comprar(char categoria[componentes_maximos][nom], float precios[componentes_maximos], int n, float* total);
+void eliminar(char categoria[componentes_maximos][nom], float precios[componentes_maximos], int n, float* total);
 
 
